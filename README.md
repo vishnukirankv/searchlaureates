@@ -1,6 +1,6 @@
 # Nobel Prize Search API
 
-This project provides a Flask-based API for searching and managing Nobel Prize data, integrated with Elasticsearch for powerful search capabilities.
+This project provides a Flask-based API for searching and managing Nobel Prize data, integrated with Elasticsearch.
 
 ## Prerequisites
 
