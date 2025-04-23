@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, field_validator
 from typing import List, Optional, Union
 from datetime import datetime
 from enum import Enum
@@ -44,7 +44,8 @@ class FlexibleSearchParams(BaseModel):
     sort_by: Optional[SortField] = Field(default=SortField.SCORE, description="Field to sort by")
     sort_order: Optional[SortOrder] = Field(default=SortOrder.DESC, description="Sort order")
 
-    @validator('include', 'exclude')
+    @field_validator('include', 'exclude')
+    @classmethod
     def validate_fields(cls, v):
         if v is not None:
             valid_fields = {
